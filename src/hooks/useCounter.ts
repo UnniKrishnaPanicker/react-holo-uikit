@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react';
-import PropTypes from 'prop-types';
-import { validateInitialValue } from '../helpers/validateInitialValue';
+import { useCallback, useState } from "react";
+import PropTypes from "prop-types";
+import { validateInitialValue } from "../helpers/validateInitialValue";
 
 type IUseCounter = {
   count: number;
@@ -8,7 +8,6 @@ type IUseCounter = {
   reset: () => void;
   decrement: () => void;
 };
-
 
 /**
  * Classic counter example to help understand the flow of this npm package
@@ -46,15 +45,16 @@ type IUseCounter = {
  *    }
  */
 
-export const useCounter = (initialValue: number = 0): IUseCounter => {
+const useCounter = (initialValue: number = 0): IUseCounter => {
   const validatedInitialValue = validateInitialValue(initialValue);
 
   const [count, setCount] = useState<number>(validatedInitialValue);
   const increment = useCallback(() => setCount((value) => value + 1), []);
   const decrement = useCallback(() => setCount((value) => value - 1), []);
-  const reset = useCallback(() => setCount(validatedInitialValue), [
-    validatedInitialValue,
-  ]);
+  const reset = useCallback(
+    () => setCount(validatedInitialValue),
+    [validatedInitialValue]
+  );
   return { count, increment, decrement, reset };
 };
 
@@ -65,3 +65,5 @@ useCounter.PropTypes = {
 useCounter.defaultProps = {
   initialValue: 0,
 };
+
+export default useCounter;
