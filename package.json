@@ -1,5 +1,5 @@
 {
-  "name": "react-holo-uikit",
+  "name": "@UnniKrishnaPanicker/react-holo-uikit",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -33,5 +33,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/UnniKrishnaPanicker"
+  }
 }
