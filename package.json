@@ -1,5 +1,5 @@
 {
-  "name": "@UnniKrishnaPanicker/react-holo-uikit",
+  "name": "@unnikrishnapanicker/react-holo-uikit",
   "version": "0.0.1",
   "type": "module",
   "description": "A simple template for a custom React component library",
@@ -34,6 +34,6 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/UnniKrishnaPanicker"
+    "registry": "https://npm.pkg.github.com/unnikrishnapanicker"
   }
 }
